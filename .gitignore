@@ -1,0 +1,10 @@
+.venv
+build
+dist
+*.spec
+*.spec.py
+*.spec.pyc
+*.spec.pyo
+*.spec.pyd
+*.spec.pyw
+*.spec.pyx

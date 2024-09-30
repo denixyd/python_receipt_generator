@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Next Kraftwerke Invoice</title>
+</head>
+<body style="font-family: Arial, sans-serif; color: #333;">
+    <table width="100%" cellpadding="10" cellspacing="0" style="border-collapse: collapse;">
+        <tr>
+            <td width="50%" style="text-align: left;">
+                <img src="assets/next_logo.PNG" alt="Next Kraftwerke Logo" class="logo" style="display: inline-block; vertical-align: middle;">
+            </td>
+            <td width="50%" style="text-align: right; color: #8cc63f;">
+                <h1 style="margin: 0;">INVOICE</h1>
+            </td>
+        </tr>
+    </table>
+
+    <table width="100%" cellpadding="10" cellspacing="0" style="border-collapse: collapse;">
+        <tr>
+            <td width="50%" valign="top">
+                <strong>FROM</strong><br>
+                Next Kraftwerke Benelux B.V.<br>
+                Street<br>
+                Postal code, City, Netherlands<br>
+                KVK: 1651131315<br>
+                VAT ID: NL813135135
+            </td>
+            <td width="50%" valign="top">
+                <strong>TO</strong><br>
+                <strong>{{ customer_name }}</strong><br>
+                {{ customer_address_street_housenumber }}<br>
+                {{ customer_postal_code }}, {{ customer_city }}<br>
+                {{ customer_country }}<br>
+                KVK: {{ customer_registration_number }}<br>
+                VAT ID: {{ customer_vat_number }}<br>
+                IBAN: {{ customer_iban }}
+            </td>
+        </tr>
+    </table>
+
+    <h2>{{ title }}</h2>
+
+    <table width="100%" cellpadding="5" cellspacing="0" style="border-collapse: collapse;">
+        <tr>
+            <td><strong>Invoice Nr.:</strong> {{ invoice_id }}</td>
+            <td><strong>Client nr.:</strong> {{ client_id }}</td>
+        </tr>
+        <tr>
+            <td><strong>Invoice Date:</strong> {{ invoice_date }}</td>
+            <td><strong>Contract nr.:</strong> {{ contract_id }}</td>
+        </tr>
+        <tr>
+            <td><strong>Issue Date:</strong> {{ issue_date }}</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><strong>Due Date:</strong> {{ due_date }}</td>
+            <td></td>
+        </tr>
+    </table>
+
+    <table width="100%" cellpadding="5" cellspacing="0" style="border-collapse: collapse; margin-top: 20px;">
+        <tr style="background-color: #f2f2f2;">
+            <th style="border: 1px solid #ddd; text-align: left;">#</th>
+            <th style="border: 1px solid #ddd; text-align: left;">Description</th>
+            <th style="border: 1px solid #ddd; text-align: left;">Quantity</th>
+            <th style="border: 1px solid #ddd; text-align: left;">Amount</th>
+            <th style="border: 1px solid #ddd; text-align: left;">VAT</th>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #ddd;">1</td>
+            <td style="border: 1px solid #ddd;">{{ description }}</td>
+            <td style="border: 1px solid #ddd;">{{ quantity }}</td>
+            <td style="border: 1px solid #ddd;">€ {{ amount }}</td>
+            <td style="border: 1px solid #ddd;">{{ vat_percentage }}%</td>
+        </tr>
+        <tr>
+            <td colspan="3" style="border: 1px solid #ddd; text-align: right;"><strong>Subtotal</strong></td>
+            <td colspan="2" style="border: 1px solid #ddd;">€ {{ subtotal }}</td>
+        </tr>
+        <tr>
+            <td colspan="3" style="border: 1px solid #ddd; text-align: right;"><strong>VAT</strong></td>
+            <td colspan="2" style="border: 1px solid #ddd;">€ {{ vat }}</td>
+        </tr>
+        <tr>
+            <td colspan="3" style="border: 1px solid #ddd; text-align: right;"><strong>Total</strong></td>
+            <td colspan="2" style="border: 1px solid #ddd;"><strong>€ {{ total }}</strong></td>
+        </tr>
+    </table>
+
+    <div style="background-color: #f2f2f2; padding: 15px; margin-top: 20px;">
+        <p><strong>Payment to be fulfilled to the following bank account:</strong></p>
+        <ul>
+            <li>To be paid to: Next Kraftwerke Benelux B.V.</li>
+            <li>IBAN: BANK123456789</li>
+            <li>BIC: BANK12345</li>
+        </ul>
+        <p><strong>Terms:</strong></p>
+        <ul>
+            <li>Please make the payment by the due date to avoid late fees.</li>
+            <li>Preferred payment method: bank transfer. Reference the invoice number when making the payment.</li>
+        </ul>
+    </div>
+
+    <hr style="margin-top: 20px;">
+
+    <div style="font-size: 12px; text-align: center; margin-top: 20px; color: #666;">
+        <p>For invoice inquiries, please contact q@ne.nl or call +31 (85) 6516513</p>
+        <p>
+            Next Kraftwerke Benelux B.V.<br>
+            Tel: +31 (85) 76543 | www.next-kraftwerke.nl | q@ne.nl<br>
+            street, postalcode, city, country<br>
+            Managing Directors: Sir 1, Sir 2
+        </p>
+    </div>
+</body>
+</html>
